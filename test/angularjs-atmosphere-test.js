@@ -10,9 +10,11 @@
     beforeEach(inject(function(_atmosphereService_) {
       atmosphereService = _atmosphereService_;
       atmosphereService.init({});
+      atmosphereService.init({});
     }));
 
     afterEach(function() {
+      atmosphereService.close();
       atmosphereService.close();
     });
 

@@ -1,13 +1,6 @@
 (function() {
   'use strict';
 
-  function NoAtmospherePluginError(message) {
-    this.prototype.name = 'NoAtmospherePluginError';
-    this.message = (message || 'The Atmosphere plugin for jQuery was not found');
-  }
-
-  NoAtmospherePluginError.prototype = new Error();
-
   /**
    * @ngdoc service
    * @name angularJS.Atmosphere.service:atmosphereService
@@ -19,10 +12,6 @@
       var listeners = {};
       var listenerIndex = {};
       var connection;
-
-      if (!$.atmosphere) {
-        throw new NoAtmospherePluginError();
-      }
 
       return {
         init: init,
@@ -43,6 +32,7 @@
       function close() {
         if (connection) {
           $.atmosphere.unsubscribeUrl(connection.getUrl());
+          connection = undefined;
         }
       }
 
