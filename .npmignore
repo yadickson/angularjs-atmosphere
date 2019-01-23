@@ -1,0 +1,10 @@
+src
+test
+coverage
+reports
+karma.conf.js
+package-lock.json
+*.tgz
+yarn*
+.travis.yml
+node_modules

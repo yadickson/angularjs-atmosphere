@@ -59,3 +59,15 @@ typings/
 
 # next.js build output
 .next
+
+build/
+dist/
+covertura/
+report/
+node_modules/
+vendor/
+reports/
+
+package-lock.json
+yarn*
+*.tgz
