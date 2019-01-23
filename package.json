@@ -32,9 +32,7 @@
   },
   "scripts": {
     "clean": "./node_modules/.bin/rimraf dist coverage reports *.tgz",
-    "prepublish": "yarn run compile",
-    "precompile": "./node_modules/.bin/mkdirp dist",
-    "compile": "./node_modules/.bin/babel --presets env,babili --out-file $npm_package_main src",
+    "prepare": "./node_modules/.bin/mkdirp dist && ./node_modules/.bin/babel --presets env,babili --out-file $npm_package_main src",
     "test": "./node_modules/.bin/karma start --single-run --browser PhantomJS",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
