@@ -18,7 +18,8 @@
         close: close,
         on: on,
         off: off,
-        emit: emit
+        emit: emit,
+        request: request
       };
 
       function init(requestObj) {
@@ -53,8 +54,8 @@
       }
 
       function off(id) {
-        var type = listenerIndex[id];
-        var typeListeners = listeners[type];
+        var type = listenerIndex[id] || '';
+        var typeListeners = listeners[type] || [];
         var removed = false;
 
         for (var i = 0; i < typeListeners.length; i++) {
@@ -89,6 +90,10 @@
             listener.fn.call(this, data);
           });
         }
+      }
+
+      function request() {
+        return $.atmosphere.AtmosphereRequest();
       }
 
     }]);
