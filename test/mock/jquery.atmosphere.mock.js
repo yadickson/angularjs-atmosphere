@@ -1,5 +1,4 @@
-var $ = $ || {};
-$.atmosphere = {
+var atmosphere = {
   AtmosphereRequest: function() {
     return {
       onError: function(response) {},

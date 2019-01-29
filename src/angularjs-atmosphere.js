@@ -26,13 +26,13 @@
         if (!connection) {
           var request = requestObj;
           request.onMessage = handleResponse;
-          connection = $.atmosphere.subscribe(request);
+          connection = atmosphere.subscribe(request);
         }
       }
 
       function close() {
         if (connection) {
-          $.atmosphere.unsubscribeUrl(connection.getUrl());
+          atmosphere.unsubscribeUrl(connection.getUrl());
           connection = undefined;
         }
       }
@@ -93,7 +93,7 @@
       }
 
       function request() {
-        return $.atmosphere.AtmosphereRequest();
+        return atmosphere.AtmosphereRequest();
       }
 
     }]);
