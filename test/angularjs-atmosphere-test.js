@@ -124,13 +124,6 @@
       expect(fn2.called).to.be.false;
     });
 
-    it('call default request', function() {
-
-      var request = atmosphereService.request();
-
-      expect(!!request).to.be.true;
-    });
-
   });
 
 })();

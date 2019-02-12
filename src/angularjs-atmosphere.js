@@ -18,8 +18,7 @@
         close: close,
         on: on,
         off: off,
-        emit: emit,
-        request: request
+        emit: emit
       };
 
       function init(requestObj) {
@@ -90,10 +89,6 @@
             listener.fn.call(this, data);
           });
         }
-      }
-
-      function request() {
-        return atmosphere.AtmosphereRequest();
       }
 
     }]);
